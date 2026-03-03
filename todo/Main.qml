@@ -58,6 +58,10 @@ Item {
       if (!pluginApi.pluginSettings.exportPath)
         pluginApi.pluginSettings.exportPath = "~/Documents";
 
+      // Initialize export format
+      if (!pluginApi.pluginSettings.exportFormat)
+        pluginApi.pluginSettings.exportFormat = "markdown";
+
       // Initialize export empty sections setting
       if (pluginApi.pluginSettings.exportEmptySections === undefined)
         pluginApi.pluginSettings.exportEmptySections = false;
@@ -570,16 +574,27 @@ Item {
     if (!pluginApi) {
       return;
     }
-    var markdown = generateExportMarkdown();
-    exportTodosToFile(markdown);
+    var format = pluginApi.pluginSettings.exportFormat;
+    var content;
+    var fileExtension;
+
+    if (format === "json") {
+      content = JSON.stringify(rawTodos, null, 2);
+      fileExtension = ".json";
+    } else {
+      content = generateExportMarkdown();
+      fileExtension = ".md";
+    }
+
+    exportTodosToFile(content, fileExtension);
   }
 
-  // Export todos to markdown file
-  function exportTodosToFile(markdownContent) {
+  // Export todos to file
+  function exportTodosToFile(content, fileExtension) {
     try {
       var timestamp = new Date().toISOString().split("T")[0];
       var timeSuffix = new Date().toISOString().replace(/[:.]/g, "-").split("T")[1];
-      var fileName = "todo_" + timestamp + "_" + timeSuffix + ".md";
+      var fileName = "todo_" + timestamp + "_" + timeSuffix + fileExtension;
 
       // Get export path from settings, default to ~/Documents
       var exportPath = pluginApi.pluginSettings.exportPath;
@@ -592,8 +607,8 @@ Item {
 
       var filePath = exportPath + "/" + fileName;
 
-      // Write file
-      var base64 = Qt.btoa(markdownContent);
+      // Write file using printf for better handling of long content
+      var base64 = Qt.btoa(content);
       currentExportPath = filePath;
       exportProcess.command = ["sh", "-c", `printf '%s' "${base64}" | base64 -d > "${filePath}"`];
       exportProcess.running = true;

@@ -96,6 +96,12 @@
       "placeholder": "e.g. ~/Documents",
       "select_folder": "Select Folder"
     },
+    "export_format": {
+      "label": "Export Format",
+      "description": "File format for exported todos",
+      "markdown": "Markdown",
+      "json": "JSON"
+    },
     "export_empty_sections": {
       "label": "Show Empty Sections",
       "description": "Show empty Active/Completed sections and pages when exporting"

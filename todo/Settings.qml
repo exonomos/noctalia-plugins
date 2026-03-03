@@ -21,6 +21,7 @@ ColumnLayout {
 
   // Export path property
   property string valueExportPath: pluginApi?.pluginSettings?.exportPath !== undefined ? pluginApi?.pluginSettings?.exportPath : pluginApi?.manifest?.metadata?.defaultSettings?.exportPath
+  property string valueExportFormat: pluginApi?.pluginSettings?.exportFormat !== undefined ? pluginApi?.pluginSettings?.exportFormat : pluginApi?.manifest?.metadata?.defaultSettings?.exportFormat
   property bool valueExportEmptySections: pluginApi?.pluginSettings?.exportEmptySections !== undefined ? pluginApi.pluginSettings.exportEmptySections : pluginApi?.manifest?.metadata?.defaultSettings?.exportEmptySections
 
   // Reference to Main.qml instance for centralized data management
@@ -143,6 +144,31 @@ ColumnLayout {
     buttonTooltip: pluginApi.tr("settings.export_path.select_folder")
     onInputEditingFinished: root.valueExportPath = text
     onButtonClicked: folderPicker.openFilePicker()
+  }
+
+  // Export format setting
+  NComboBox {
+    Layout.fillWidth: true
+    label: pluginApi.tr("settings.export_format.label")
+    description: pluginApi.tr("settings.export_format.description")
+    model: [
+      {
+        key: "markdown",
+        name: pluginApi.tr("settings.export_format.markdown")
+      },
+      {
+        key: "json",
+        name: pluginApi.tr("settings.export_format.json")
+      }
+    ]
+    currentKey: root.valueExportFormat
+    onSelected: function (key) {
+      root.valueExportFormat = key;
+      if (mainInstance && mainInstance.pluginApi) {
+        mainInstance.pluginApi.pluginSettings.exportFormat = key;
+        mainInstance.pluginApi.saveSettings();
+      }
+    }
   }
 
   // Export empty sections setting
