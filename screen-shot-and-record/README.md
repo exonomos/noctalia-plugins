@@ -1,5 +1,7 @@
 # Screenshot Plugin
 
+**This plugin currently only supports Hyprland. Window selection and record may not be available on other window managers, and may cause quickshell crash in Niri.**
+
 This plugin implements screen region selection, window selection, text recognition, Google Lens, and screen recording functionality based on Quickshell.
 
 ## Installation
@@ -12,8 +14,6 @@ Install from the plugin marketplace. You also need to install the following pack
 | Text Recognition | `tesseract` (OCR, also install language packages, e.g., `tesseract-data-chi_sim`) |
 | Google Lens | `xdg-open`, `jq` |
 | Screen Recording | `wf-recorder` |
-
-This plugin currently only supports Hyprland. Window selection may not be available on other window managers.
 
 ## Usage
 

@@ -451,12 +451,12 @@ PanelWindow {
 
     function labelForTarget(t: string): string {
         switch (t) {
-            case "screenshot": return pluginApi?.tr("panel.target.screenshot") || "Screenshot"
-            case "ocr": return pluginApi?.tr("panel.target.ocr") || "OCR"
-            case "search": return pluginApi?.tr("panel.target.search") || "Image Search"
-            case "record": return pluginApi?.tr("panel.target.record") || "Screen Recording"
-            case "recordsound": return pluginApi?.tr("panel.target.recordsound") || "Screen Recording (with Audio)"
-            default: return pluginApi?.tr("panel.target.bug") || "I'm a Bug!"
+            case "screenshot": return pluginApi?.tr("panel.target.screenshot")
+            case "ocr": return pluginApi?.tr("panel.target.ocr")
+            case "search": return pluginApi?.tr("panel.target.search")
+            case "record": return pluginApi?.tr("panel.target.record")
+            case "recordsound": return pluginApi?.tr("panel.target.recordsound")
+            default: return pluginApi?.tr("panel.target.bug")
         }
     }
 

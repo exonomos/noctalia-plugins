@@ -28,8 +28,8 @@ ColumnLayout {
 
     NToggle {
         Layout.fillWidth: true
-        label: pluginApi?.tr("settings.enableWindowsSelection.label") || "Enable Window Detection"
-        description: pluginApi?.tr("settings.enableWindowsSelection.description") || "Whether to detect windows when selecting area. Only supported on Hyprland."
+        label: pluginApi?.tr("settings.enableWindowsSelection.label")
+        description: pluginApi?.tr("settings.enableWindowsSelection.description")
         checked: root.enableWindowsSelection
         onToggled: (checked) => {
             root.enableWindowsSelection = checked
@@ -38,8 +38,8 @@ ColumnLayout {
 
     NToggle {
         Layout.fillWidth: true
-        label: pluginApi?.tr("settings.enableCross.label") || "Enable Crosshair"
-        description: pluginApi?.tr("settings.enableCross.description") || "Whether to enable crosshair aiming."
+        label: pluginApi?.tr("settings.enableCross.label")
+        description: pluginApi?.tr("settings.enableCross.description")
         checked: root.enableCross
         onToggled: (checked) => {
             root.enableCross = checked
@@ -51,8 +51,8 @@ ColumnLayout {
         spacing: Style.marginM
 
         NLabel {
-            label: pluginApi?.tr("settings.screenshotEditor.label") || "Screenshot Annotation Tool"
-            description: pluginApi?.tr("settings.screenshotEditor.description") || "Tool used for annotating screenshots. Needs to be pre-installed."
+            label: pluginApi?.tr("settings.screenshotEditor.label")
+            description: pluginApi?.tr("settings.screenshotEditor.description")
         }
 
         NComboBox {
