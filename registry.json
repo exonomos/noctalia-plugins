@@ -498,7 +498,7 @@
     {
       "id": "mpd",
       "name": "MPD",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "official": false,
       "author": "Ido Perlmuter",
       "description": "MPD plugin for Noctalia",
@@ -510,7 +510,7 @@
         "Audio",
         "Music"
       ],
-      "lastUpdated": "2026-03-05T15:15:04+02:00"
+      "lastUpdated": "2026-03-15T22:15:58+10:00"
     },
     {
       "id": "mpris-lyric",
@@ -566,7 +566,7 @@
     {
       "id": "network-indicator",
       "name": "Network Indicator",
-      "version": "1.0.5",
+      "version": "1.0.6",
       "official": false,
       "author": "tonigineer",
       "description": "A `lively` network traffic indicator.",
@@ -578,7 +578,7 @@
         "Network",
         "Indicator"
       ],
-      "lastUpdated": "2026-01-26T23:59:29-05:00"
+      "lastUpdated": "2026-03-15T13:25:43+01:00"
     },
     {
       "id": "network-manager-vpn",
@@ -794,7 +794,7 @@
     {
       "id": "screen-recorder",
       "name": "Screen Recorder",
-      "version": "1.2.0",
+      "version": "1.3.0",
       "official": true,
       "author": "Noctalia Team",
       "description": "Hardware-accelerated screen recording using gpu-screen-recorder with customizable video and audio settings",
@@ -805,7 +805,7 @@
         "Bar",
         "Utility"
       ],
-      "lastUpdated": "2026-03-07T11:53:21+01:00"
+      "lastUpdated": "2026-03-15T22:12:26+01:00"
     },
     {
       "id": "screen-shot-and-record",
@@ -844,7 +844,7 @@
     {
       "id": "show-keys",
       "name": "Show Keys",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "official": false,
       "author": "onez3r0",
       "description": "Floating OSD that displays keyboard input in real-time via evtest.",
@@ -855,7 +855,7 @@
         "Indicator",
         "System"
       ],
-      "lastUpdated": "2026-03-13T00:20:37+08:00"
+      "lastUpdated": "2026-03-15T15:10:45+08:00"
     },
     {
       "id": "simple-notes",
@@ -941,7 +941,7 @@
     {
       "id": "timer",
       "name": "Timer",
-      "version": "1.1.1",
+      "version": "1.1.2",
       "official": true,
       "author": "Noctalia Team",
       "description": "A timer and stopwatch plugin for the bar & control center.",
@@ -952,7 +952,7 @@
         "Bar",
         "Utility"
       ],
-      "lastUpdated": "2026-03-09T13:28:20+01:00"
+      "lastUpdated": "2026-03-15T21:18:27+01:00"
     },
     {
       "id": "todo",
@@ -1040,7 +1040,7 @@
     {
       "id": "vscode-provider",
       "name": "VS Code Provider",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "official": false,
       "author": "Krendil",
       "description": "Open VS Code Folders and Workspaces",
@@ -1051,22 +1051,22 @@
         "Launcher",
         "Development"
       ],
-      "lastUpdated": "2026-03-05T13:12:10+10:00"
+      "lastUpdated": "2026-03-15T17:16:29+01:00"
     },
     {
       "id": "weather-indicator",
       "name": "Weather Indicator",
-      "version": "1.0.10",
+      "version": "1.1.1",
       "official": false,
       "author": "Sovereign",
       "description": "Shows the current weather condition and tempurature.",
       "repository": "https://github.com/noctalia-dev/noctalia-plugins",
-      "minNoctaliaVersion": "4.3.0",
+      "minNoctaliaVersion": "4.6.8",
       "license": "MIT",
       "tags": [
         "Bar"
       ],
-      "lastUpdated": "2026-03-03T16:56:42-05:00"
+      "lastUpdated": "2026-03-15T10:09:13-04:00"
     },
     {
       "id": "weekly-calendar",
