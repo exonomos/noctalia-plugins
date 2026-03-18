@@ -717,7 +717,7 @@
     {
       "id": "polkit-agent",
       "name": "Polkit Agent",
-      "version": "1.0.4",
+      "version": "1.0.5",
       "official": true,
       "author": "Noctalia Team <team@noctalia.dev>",
       "description": "Provides a Polkit authentication agent.",
@@ -728,7 +728,7 @@
         "System",
         "Security"
       ],
-      "lastUpdated": "2026-03-18T17:51:21+01:00"
+      "lastUpdated": "2026-03-18T22:34:03+01:00"
     },
     {
       "id": "pomodoro",
