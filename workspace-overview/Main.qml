@@ -17,7 +17,7 @@ Item {
 
     // This function will be exposed
     function showOverview() {
-        Logger.i("-> Received command to open the Overview");
+        Logger.i("Workspace Overview", "-> Received command to open the Overview");
         if (pluginApi) {
             pluginApi.withCurrentScreen(screen => {
                 pluginApi.togglePanel(screen);
@@ -26,6 +26,6 @@ Item {
     }
 
     Component.onCompleted: {
-        Logger.i("-> [Main] Workspace Overview is ready and listening.");
+        Logger.i("Workspace Overview", "-> [Main] Workspace Overview is ready and listening.");
     }
 }

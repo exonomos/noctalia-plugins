@@ -102,7 +102,7 @@ Item {
                         onDropped: (drop) => {
                             if (drop.hasText && drop.text !== "") {
                                 let windowData = JSON.parse(drop.text);
-                                Logger.i("Overview", "Move window " + windowData.winId + " to workspace " + targetWorkspaceId);
+                                Logger.i("Workspace Overview", "Move window " + windowData.winId + " to workspace " + targetWorkspaceId);
                                 
                                 // Hyprland command via Quickshell
                                 Hyprland.dispatch("movetoworkspacesilent " + targetWorkspaceId + ",address:" + windowData.winId);
