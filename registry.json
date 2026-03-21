@@ -38,7 +38,7 @@
     {
       "id": "asus_um5606_fan_state",
       "name": "ASUS UM5606 Fan State",
-      "version": "1.1.3",
+      "version": "1.1.4",
       "official": false,
       "author": "ThatOneCalculator",
       "description": "Set the fan state on the ZenBook S 16 UM5606",
@@ -49,7 +49,7 @@
         "Bar",
         "System"
       ],
-      "lastUpdated": "2026-03-13T14:55:56-07:00"
+      "lastUpdated": "2026-03-20T20:28:11+01:00"
     },
     {
       "id": "battery-actions",
@@ -82,6 +82,22 @@
         "System"
       ],
       "lastUpdated": "2026-03-06T19:49:25+01:00"
+    },
+    {
+      "id": "calendar-widget",
+      "name": "Desktop Calendar",
+      "version": "1.0.1",
+      "official": false,
+      "author": "Simon",
+      "description": "Monthly calendar with today highlighted.",
+      "repository": "https://github.com/noctalia-dev/noctalia-plugins",
+      "minNoctaliaVersion": "4.6.6",
+      "license": "MIT",
+      "tags": [
+        "Desktop",
+        "Utility"
+      ],
+      "lastUpdated": "2026-03-20T20:37:22+01:00"
     },
     {
       "id": "calibre-provider",
@@ -119,7 +135,7 @@
     {
       "id": "clipper",
       "name": "Clipper",
-      "version": "2.2.3",
+      "version": "2.3.0",
       "official": false,
       "author": "blackbartblues",
       "description": "Advanced clipboard manager with history, search, keyboard navigation, ToDo integration, pinned items, notecards/sticky notes, and selection-to-notecard feature. Fully translated with comprehensive i18n support.",
@@ -131,12 +147,12 @@
         "Bar",
         "Panel"
       ],
-      "lastUpdated": "2026-03-16T14:00:58+07:00"
+      "lastUpdated": "2026-03-19T20:57:42+01:00"
     },
     {
       "id": "coin-flip",
       "name": "Coin Flipper",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "official": false,
       "author": "DanisDeveloper",
       "description": "Simple bar widget with notification about result",
@@ -145,12 +161,12 @@
       "tags": [
         "Bar"
       ],
-      "lastUpdated": "2026-03-12T21:45:04-04:00"
+      "lastUpdated": "2026-03-20T20:43:59+01:00"
     },
     {
       "id": "color-scheme-creator",
       "name": "Color Scheme Creator",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "official": true,
       "author": "Noctalia Team",
       "description": "Create and manage custom predefined color schemes with a visual color editor.",
@@ -161,7 +177,7 @@
         "Theming",
         "Utility"
       ],
-      "lastUpdated": "2026-02-24T17:49:23-05:00"
+      "lastUpdated": "2026-03-20T21:10:35+01:00"
     },
     {
       "id": "currency-exchange",
@@ -182,7 +198,7 @@
     {
       "id": "custom-commands",
       "name": "Custom Commands",
-      "version": "1.0.3",
+      "version": "1.0.4",
       "official": true,
       "author": "Noctalia Team",
       "description": "Define and run custom shell commands from the launcher",
@@ -192,14 +208,14 @@
       "tags": [
         "Launcher"
       ],
-      "lastUpdated": "2026-03-14T09:01:32-04:00"
+      "lastUpdated": "2026-03-20T21:27:33+01:00"
     },
     {
       "id": "custom-sticker",
       "name": "Custom Stickers",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "official": false,
-      "author": "Spyridon Siarapis",
+      "author": "spiros132",
       "description": "Custom stickers (images) that you can put on the desktop as desktop widgets.",
       "repository": "https://github.com/noctalia-dev/noctalia-plugins",
       "minNoctaliaVersion": "4.6.6",
@@ -208,12 +224,12 @@
         "Desktop",
         "Fun"
       ],
-      "lastUpdated": "2026-03-10T23:16:33+01:00"
+      "lastUpdated": "2026-03-20T21:37:46+01:00"
     },
     {
       "id": "deskvis",
       "name": "DeskVis",
-      "version": "2.0.1",
+      "version": "2.0.2",
       "official": false,
       "author": "HAVEKziad",
       "description": "Audio visualizer desktop widget — bars, wave, or mirror. Supports all directions. Transparent, follows color scheme.",
@@ -223,7 +239,7 @@
         "Desktop",
         "Audio"
       ],
-      "lastUpdated": "2026-03-13T12:58:00Z"
+      "lastUpdated": "2026-03-20T22:21:12+01:00"
     },
     {
       "id": "dns-switcher",
@@ -449,7 +465,7 @@
     {
       "id": "mawaqit",
       "name": "Mawaqit",
-      "version": "1.3.0",
+      "version": "1.3.1",
       "official": false,
       "author": "User",
       "description": "Shows prayer times with a live countdown and a Hijri calendar with Islamic events.",
@@ -459,7 +475,7 @@
         "Bar",
         "Panel"
       ],
-      "lastUpdated": "2026-03-12T23:02:48+01:00"
+      "lastUpdated": "2026-03-21T02:28:34+01:00"
     },
     {
       "id": "mini-docker",
@@ -484,7 +500,7 @@
       "version": "0.2.0",
       "official": false,
       "author": "cmptr",
-      "description": "Shows AI coding assistant usage stats in the bar with detail panel (Claude Code, Codex, OpenRouter, Zen)",
+      "description": "Shows AI coding assistant usage stats in the bar with detail panel (Claude Code, Codex, Copilot, OpenRouter, Zen)",
       "repository": "https://github.com/noctalia-dev/noctalia-plugins",
       "minNoctaliaVersion": "3.6.0",
       "license": "MIT",
@@ -493,7 +509,7 @@
         "Productivity",
         "AI"
       ],
-      "lastUpdated": "2026-02-25T19:27:50-06:00"
+      "lastUpdated": "2026-03-11T21:10:57-07:00"
     },
     {
       "id": "mpd",
@@ -533,7 +549,7 @@
       "name": "Mpvpaper",
       "version": "1.6.2",
       "official": false,
-      "author": "Spyridon Siarapis",
+      "author": "spiros132",
       "description": "A plugin that allows having video wallpapers using mpvpaper.",
       "repository": "https://github.com/noctalia-dev/noctalia-plugins",
       "minNoctaliaVersion": "3.6.0",
@@ -544,12 +560,29 @@
         "Fun",
         "System"
       ],
-      "lastUpdated": "2026-02-09T20:15:29+01:00"
+      "lastUpdated": "2026-03-19T20:22:45+01:00"
+    },
+    {
+      "id": "music-search",
+      "name": "Music Search",
+      "version": "1.0.0",
+      "official": false,
+      "author": "kevichi7",
+      "description": "Search YouTube, play audio in the background with mpv, and save favorites into a persistent library.",
+      "repository": "https://github.com/noctalia-dev/noctalia-plugins",
+      "minNoctaliaVersion": "4.6.6",
+      "license": "MIT",
+      "tags": [
+        "Launcher",
+        "Audio",
+        "Music"
+      ],
+      "lastUpdated": "2026-03-20T20:40:31+08:00"
     },
     {
       "id": "netbird",
       "name": "NetBird",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "official": false,
       "author": "Cleboost",
       "description": "Show NetBird VPN status in the menu bar.",
@@ -561,7 +594,7 @@
         "Network",
         "Panel"
       ],
-      "lastUpdated": "2026-02-13T15:08:22+01:00"
+      "lastUpdated": "2026-03-20T23:10:16+01:00"
     },
     {
       "id": "network-indicator",
@@ -583,7 +616,7 @@
     {
       "id": "network-manager-vpn",
       "name": "Network Manager VPN",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "official": false,
       "author": "nZO",
       "description": "Connect to VPN via NetworkManager",
@@ -595,7 +628,7 @@
         "Panel",
         "Network"
       ],
-      "lastUpdated": "2026-02-23T22:04:26+01:00"
+      "lastUpdated": "2026-03-20T23:43:08+01:00"
     },
     {
       "id": "news",
@@ -614,6 +647,24 @@
         "Fun"
       ],
       "lastUpdated": "2026-03-18T17:51:21+01:00"
+    },
+    {
+      "id": "niri-animation-picker",
+      "name": "Niri Animation Picker",
+      "version": "1.1.0",
+      "official": false,
+      "author": "Duncan-Rose",
+      "description": "Pick a KDL animation preset and write it as an include into your niri config",
+      "repository": "",
+      "minNoctaliaVersion": "3.6.0",
+      "license": "MIT",
+      "tags": [
+        "Fun",
+        "Niri",
+        "Theming",
+        "Utility"
+      ],
+      "lastUpdated": "2026-03-18T19:15:18+01:00"
     },
     {
       "id": "niri-auto-tile",
@@ -825,6 +876,22 @@
       "lastUpdated": "2026-01-26T23:59:29-05:00"
     },
     {
+      "id": "saved-desktop-widgets",
+      "name": "Saved Desktop Widgets",
+      "version": "1.0.0",
+      "official": false,
+      "author": "spiros132",
+      "description": "A plugin that allows you to have multiple setups for your desktop widgets based on the wallpaper.",
+      "repository": "https://github.com/noctalia-dev/noctalia-plugins",
+      "minNoctaliaVersion": "3.6.0",
+      "license": "MIT",
+      "tags": [
+        "Fun",
+        "System"
+      ],
+      "lastUpdated": "2026-03-19T20:15:34+01:00"
+    },
+    {
       "id": "screen-recorder",
       "name": "Screen Recorder",
       "version": "1.3.1",
@@ -857,6 +924,24 @@
         "Hyprland"
       ],
       "lastUpdated": "2026-03-06T07:43:39-05:00"
+    },
+    {
+      "id": "screen-toolkit",
+      "name": "Screen Toolkit",
+      "version": "1.0.1",
+      "official": false,
+      "author": "ycf-anon",
+      "description": "A set of screen tools: color picker, annotate, record, pin, OCR, QR scanner, palette, measure, and webcam mirror.",
+      "repository": "https://github.com/noctalia-dev/noctalia-plugins",
+      "minNoctaliaVersion": "4.5.0",
+      "license": "MIT",
+      "tags": [
+        "Panel",
+        "Bar",
+        "Utility",
+        "System"
+      ],
+      "lastUpdated": "2026-03-21T02:21:08+01:00"
     },
     {
       "id": "screenshot",
@@ -957,7 +1042,7 @@
     {
       "id": "tailscale",
       "name": "Tailscale",
-      "version": "1.1.2",
+      "version": "1.1.4",
       "official": false,
       "author": "nineluj",
       "description": "Show Tailscale status in the menu bar.",
@@ -969,7 +1054,7 @@
         "Network",
         "Panel"
       ],
-      "lastUpdated": "2026-02-14T20:25:29+01:00"
+      "lastUpdated": "2026-03-20T08:37:02+01:00"
     },
     {
       "id": "timer",
@@ -1053,11 +1138,29 @@
       "lastUpdated": "2026-03-15T14:47:53+01:00"
     },
     {
+      "id": "valent-connect",
+      "name": "Valent Connect",
+      "version": "1.2.0",
+      "official": false,
+      "author": "Suyash",
+      "description": "A plugin integrating your mobile devices into a panel using Valent",
+      "repository": "https://github.com/noctalia-dev/noctalia-plugins",
+      "minNoctaliaVersion": "4.6.7",
+      "license": "GPLv2",
+      "tags": [
+        "Bar",
+        "Panel",
+        "Utility",
+        "System"
+      ],
+      "lastUpdated": "2026-03-21T18:45:06+05:30"
+    },
+    {
       "id": "video-wallpaper",
       "name": "Video Wallpaper",
       "version": "2.0.4",
       "official": false,
-      "author": "Spyridon Siarapis",
+      "author": "spiros132",
       "description": "A plugin that uses a backend renderer to play videos as your wallpaper.",
       "repository": "https://github.com/noctalia-dev/noctalia-plugins",
       "minNoctaliaVersion": "3.6.0",
@@ -1068,7 +1171,7 @@
         "Fun",
         "System"
       ],
-      "lastUpdated": "2026-03-07T21:33:03+01:00"
+      "lastUpdated": "2026-03-19T20:22:45+01:00"
     },
     {
       "id": "vscode-provider",
@@ -1104,7 +1207,7 @@
     {
       "id": "web-search",
       "name": "Web Search",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "official": false,
       "author": "Rigelyon",
       "description": "Search the Internet from the Launcher.",
@@ -1115,7 +1218,7 @@
         "Launcher",
         "Utility"
       ],
-      "lastUpdated": "2026-03-17T09:56:15+07:00"
+      "lastUpdated": "2026-03-20T20:12:02+01:00"
     },
     {
       "id": "weekly-calendar",
@@ -1146,6 +1249,22 @@
       "license": "MIT",
       "tags": [],
       "lastUpdated": "2026-01-27T08:47:06-05:00"
+    },
+    {
+      "id": "zed-provider",
+      "name": "Zed Provider",
+      "version": "1.0.2",
+      "official": false,
+      "author": "justKevv",
+      "description": "A zed provider for opening project easier using zed code editor",
+      "repository": "https://github.com/noctalia-dev/noctalia-plugins",
+      "minNoctaliaVersion": "3.6.0",
+      "license": "MIT",
+      "tags": [
+        "Launcher",
+        "Developer"
+      ],
+      "lastUpdated": "2026-03-20T20:17:24+01:00"
     }
   ]
 }
