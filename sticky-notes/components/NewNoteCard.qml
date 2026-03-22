@@ -18,7 +18,7 @@ Rectangle {
   color: noteColor
   radius: Style.radiusM
   border.color: textArea.activeFocus ? Qt.darker(Color.mPrimary, 1.35) : Color.mPrimary
-  border.width: 2
+  border.width: Style.borderM
 
   Behavior on border.color { ColorAnimation { duration: 150 } }
 

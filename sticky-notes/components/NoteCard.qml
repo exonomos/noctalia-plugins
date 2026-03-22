@@ -61,7 +61,7 @@ Rectangle {
   border.color: isEditing
     ? (editTextArea.activeFocus ? Qt.darker(Color.mPrimary, 1.35) : Color.mPrimary)
     : Qt.darker(noteCard.noteColor || "#FFF9C4", 1.06)
-  border.width: isEditing ? 2 : 1
+  border.width: isEditing ? Style.borderM : Style.borderS
 
   Behavior on border.color { ColorAnimation { duration: 150 } }
   Behavior on border.width { NumberAnimation { duration: 150 } }

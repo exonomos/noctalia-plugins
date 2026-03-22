@@ -57,7 +57,7 @@ Item {
     anchors.centerIn: parent
     radius: Style.radiusL
     color: root.noteColor || "#FFF9C4"
-    border.width: 1
+    border.width: Style.borderS
     border.color: Qt.darker(root.noteColor || "#FFF9C4", 1.08)
 
     ColumnLayout {
@@ -127,7 +127,7 @@ Item {
         Layout.fillHeight: true
         radius: Style.radiusM
         color: Qt.rgba(1, 1, 1, 0.28)
-        border.width: root.editing ? 2 : 1
+        border.width: root.editing ? Style.borderM : Style.borderS
         border.color: root.editing
           ? (editor.activeFocus ? Qt.darker(Color.mPrimary, 1.35) : Color.mPrimary)
           : Qt.rgba(0, 0, 0, 0.08)
