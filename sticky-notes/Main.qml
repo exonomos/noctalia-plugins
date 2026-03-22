@@ -107,11 +107,6 @@ Item {
 
     persistNotes(notes);
 
-    if (expandedNoteId === noteId) {
-      // expanded view is already synced by property bindings in ExpandedPanelWindow,
-      // but if we were tracking more here we would update it.
-    }
-
     Logger.i("StickyNotes", "Note saved: " + noteId);
     return note;
   }
