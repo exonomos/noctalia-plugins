@@ -1228,7 +1228,7 @@
     {
       "id": "wallcards",
       "name": "Wallcards",
-      "version": "0.0.1",
+      "version": "0.0.2",
       "official": false,
       "author": "tonigineer",
       "description": "A `lively` wallpaper selector.",
@@ -1239,7 +1239,7 @@
         "Desktop",
         "Theming"
       ],
-      "lastUpdated": "2026-03-24T19:21:11+01:00"
+      "lastUpdated": "2026-03-25T20:10:48+01:00"
     },
     {
       "id": "weather-indicator",
