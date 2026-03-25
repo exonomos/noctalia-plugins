@@ -22,7 +22,6 @@ NScrollView {
 
     Layout.fillWidth: true
     Layout.fillHeight: true
-    // Unificado: Usamos XL para el aire inferior
     contentHeight: mainLayout.implicitHeight + Style.marginXL
     clip: true
 
@@ -65,7 +64,7 @@ NScrollView {
 
             color: isActive ? Qt.alpha(cColor, 0.12) : (hoverArea.containsMouse ? Qt.alpha(cColor, 0.05) : "transparent")
             
-            border.width: (isActive ? 2 : 1) * Style.uiScaleRatio
+            border.width: isActive ? Style.borderL : (hoverArea.containsMouse ? Style.borderM : Style.borderS)
             border.color: isActive ? cColor : (hoverArea.containsMouse ? Qt.alpha(cColor, 0.4) : Color.mOutline)
 
             Behavior on color { ColorAnimation { duration: 150 } }

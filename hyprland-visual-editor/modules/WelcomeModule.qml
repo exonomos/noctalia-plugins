@@ -22,7 +22,6 @@ NScrollView {
 
     Layout.fillWidth: true
     Layout.fillHeight: true
-    // Cambiado 100 por margen dinámico
     contentHeight: mainLayout.implicitHeight + (Style.marginXL * 2)
     clip: true
 
@@ -101,7 +100,7 @@ NScrollView {
                     color: Qt.alpha(Color.mError, 0.08)
                     radius: Style.radiusM
                     border.color: Qt.alpha(Color.mError, 0.3)
-                    border.width: 1 * Style.uiScaleRatio
+                    border.width: Style.borderS
                     RowLayout {
                         id: warnCol
                         anchors.fill: parent; anchors.margins: Style.marginM; spacing: Style.marginM
@@ -205,7 +204,7 @@ NScrollView {
         Layout.fillWidth: true; Layout.leftMargin: Style.marginL; Layout.rightMargin: Style.marginL
         implicitHeight: cardCol.implicitHeight + (Style.marginL * 2)
         radius: Style.radiusM
-        border.color: Qt.alpha(accentColor, 0.3); border.width: 1 * Style.uiScaleRatio
+        border.color: Qt.alpha(accentColor, 0.3); border.width: Style.borderM
         color: Qt.alpha(accentColor, 0.03)
         ColumnLayout {
             id: cardCol; anchors.fill: parent; anchors.margins: Style.marginL; spacing: Style.marginM

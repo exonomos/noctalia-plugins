@@ -157,7 +157,7 @@ Item {
 
         color: isSelected ? Qt.alpha(Color.mPrimary, Style.stateOpacityActive) : (tabMouse.containsMouse ? Qt.alpha(accentColor, Style.stateOpacityHover) : "transparent")
         
-        border.width: 1 * Style.uiScaleRatio
+        border.width: Style.borderS
         
         border.color: isSelected ? Color.mPrimary : (tabMouse.containsMouse ? accentColor : Qt.alpha(accentColor, Style.stateOpacityHover))
 

@@ -65,7 +65,7 @@ NScrollView {
 
             color: isActive ? Qt.alpha(cColor, 0.12) : (hoverArea.containsMouse ? Qt.alpha(cColor, 0.05) : "transparent")
             
-            border.width: (isActive ? 2 : 1) * Style.uiScaleRatio
+            border.width: isActive ? Style.borderL : (hoverArea.containsMouse ? Style.borderM : Style.borderS)
             border.color: isActive ? cColor : (hoverArea.containsMouse ? Qt.alpha(cColor, 0.4) : Color.mOutline)
 
             Behavior on color { ColorAnimation { duration: 150 } }
@@ -167,7 +167,7 @@ NScrollView {
             color: Qt.alpha(Color.mSurface, 0.4)
             radius: Style.radiusM
             border.color: Color.mOutline
-            border.width: 1 * Style.uiScaleRatio
+            border.width: Style.borderS
 
             ColumnLayout {
                 id: geoCol

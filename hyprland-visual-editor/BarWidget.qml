@@ -29,7 +29,7 @@ NIconButton {
   colorFg: Color.resolveColorKey(iconColorKey)
 
   border.color: Style.capsuleBorderColor
-  border.width: 1 * Style.uiScaleRatio
+  border.width: Style.borderS
 
   onClicked: {
     if (pluginApi) {
