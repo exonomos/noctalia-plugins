@@ -89,16 +89,14 @@ qs -c noctalia-shell ipc call plugin:tailscale <command>
 | `toggle` | Toggle Tailscale connection (connect/disconnect) | `qs -c noctalia-shell ipc call plugin:tailscale toggle` |
 | `status` | Get current Tailscale status | `qs -c noctalia-shell ipc call plugin:tailscale status` |
 | `refresh` | Force refresh Tailscale status | `qs -c noctalia-shell ipc call plugin:tailscale refresh` |
-| `receive` | Start a Taildrop receive session | `qs -c noctalia-shell ipc call plugin:tailscale receive` |
-| `cancelReceive` | Cancel an active Taildrop receive session | `qs -c noctalia-shell ipc call plugin:tailscale cancelReceive` |
+| `receive` | Fetch any pending Taildrop files | `qs -c noctalia-shell ipc call plugin:tailscale receive` |
 
 ## Usage
 
 1. **Click** the icon to open the Tailscale panel
 2. **Right-click the bar widget** to open the context menu (connect/disconnect, settings)
 3. **Right-click a peer** in the panel to copy its IP/FQDN, SSH, ping, set as exit node, or send a file
-4. **Receive via Taildrop**: click the "Receive via Taildrop" button in the panel; it closes the panel and waits for incoming files
-5. The icon turns a different color when a Taildrop receive session is active
+4. **Receive via Taildrop**: click "Receive via Taildrop" in the panel to fetch any pending incoming files
 
 ## Troubleshooting
 

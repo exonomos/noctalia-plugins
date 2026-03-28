@@ -85,8 +85,7 @@
       "disable": "Disable Exit Node"
     },
     "taildrop": {
-      "receive": "Receive via Taildrop",
-      "cancel": "Cancel Receive"
+      "receive": "Receive via Taildrop"
     }
   },
   "taildrop": {

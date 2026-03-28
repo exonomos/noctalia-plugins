@@ -85,8 +85,7 @@
       "disable": "Tắt exit node"
     },
     "taildrop": {
-      "receive": "Nhận qua Taildrop",
-      "cancel": "Hủy nhận"
+      "receive": "Nhận qua Taildrop"
     }
   },
   "taildrop": {

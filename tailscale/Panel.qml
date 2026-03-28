@@ -591,24 +591,16 @@ Item {
         }
       }
 
-      // Taildrop receive toggle
+      // Taildrop receive button
       NButton {
         Layout.fillWidth: true
         visible: (mainInstance?.tailscaleRunning ?? false) && (mainInstance?.taildropEnabled ?? true)
-        text: (mainInstance?.taildropState === "receiving")
-          ? pluginApi?.tr("panel.taildrop.cancel")
-          : pluginApi?.tr("panel.taildrop.receive")
-        icon: (mainInstance?.taildropState === "receiving") ? "x" : "file-download"
-        backgroundColor: (mainInstance?.taildropState === "receiving") ? Color.mError : Color.mPrimary
-        textColor: (mainInstance?.taildropState === "receiving") ? Color.mOnError : Color.mOnPrimary
+        text: pluginApi?.tr("panel.taildrop.receive")
+        icon: "file-download"
         onClicked: {
           if (!mainInstance) return
-          if (mainInstance.taildropState === "receiving") {
-            mainInstance.cancelTaildropReceive()
-          } else {
-            mainInstance.startTaildropReceive()
-            if (pluginApi) pluginApi.closePanel(pluginApi.panelOpenScreen)
-          }
+          mainInstance.startTaildropReceive()
+          if (pluginApi) pluginApi.closePanel(pluginApi.panelOpenScreen)
         }
       }
 

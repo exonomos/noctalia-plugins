@@ -85,8 +85,7 @@
       "disable": "Inaktivera utgångsnod"
     },
     "taildrop": {
-      "receive": "Ta emot via Taildrop",
-      "cancel": "Avbryt mottagning"
+      "receive": "Ta emot via Taildrop"
     }
   },
   "taildrop": {

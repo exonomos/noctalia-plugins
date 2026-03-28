@@ -52,7 +52,6 @@ Item {
         applyUiScale: false
         crossed: !(mainInstance?.tailscaleRunning ?? false)
         color: {
-          if (mainInstance?.taildropState === "receiving") return Color.mTertiary
           if (mainInstance?.tailscaleRunning ?? false) return Color.mPrimary
           return mouseArea.containsMouse ? Color.mOnHover : Color.mOnSurface
         }

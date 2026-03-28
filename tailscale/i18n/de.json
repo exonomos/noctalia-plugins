@@ -17,7 +17,7 @@
     "hide-mullvad-exit-nodes-desc": "Mullvad-VPN-Ausgangsknoten aus der Peer-Liste ausblenden",
     "terminal": "Terminal Konfiguration",
     "terminal-command": "Terminal Befehl",
-    "terminal-command-desc": "Befehl zum Starten eines Terminals für SSH/Ping (z.B. „ghostty", „alacritty", „kitty")",
+    "terminal-command-desc": "Befehl zum Starten eines Terminals für SSH/Ping (z.B. 'ghostty', 'alacritty', 'kitty')",
     "ssh-username": "SSH-Benutzername",
     "ssh-username-desc": "Benutzername für SSH-Verbindungen. Leer lassen, um den Standardbenutzernamen Ihres Hosts zu verwenden.",
     "ssh-username-placeholder": "z. B. pi, ubuntu, admin",
@@ -85,8 +85,7 @@
       "disable": "Ausgangsknoten deaktivieren"
     },
     "taildrop": {
-      "receive": "Über Taildrop empfangen",
-      "cancel": "Empfang abbrechen"
+      "receive": "Über Taildrop empfangen"
     }
   },
   "taildrop": {

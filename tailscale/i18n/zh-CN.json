@@ -85,8 +85,7 @@
       "disable": "禁用出口节点"
     },
     "taildrop": {
-      "receive": "通过Taildrop接收",
-      "cancel": "取消接收"
+      "receive": "通过Taildrop接收"
     }
   },
   "taildrop": {

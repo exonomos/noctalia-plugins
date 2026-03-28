@@ -390,14 +390,6 @@ Item {
     preScanProcess.running = true
   }
 
-  function cancelTaildropReceive() {
-    if (root.taildropState !== "receiving") return
-    taildropReceiveProcess.running = false
-    root.taildropState = "idle"
-    root.taildropMessage = ""
-    Logger.i("Tailscale", "Taildrop receive cancelled")
-  }
-
   // files: array of local file paths, peerTarget: "hostname:" or "ip:"
   function sendFilesViaTaildrop(files, peerTarget) {
     if (!root.tailscaleInstalled || !root.tailscaleRunning) {
@@ -527,11 +519,6 @@ Item {
     // Taildrop IPC: qs ipc call plugin:tailscale receive
     function receive() {
       startTaildropReceive()
-    }
-
-    // Taildrop IPC: qs ipc call plugin:tailscale cancelReceive
-    function cancelReceive() {
-      cancelTaildropReceive()
     }
 
     // Dev/testing: toggle mock peer list to reproduce few-device layouts.

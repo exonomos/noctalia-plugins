@@ -85,8 +85,7 @@
       "disable": "Désactiver le nœud de sortie"
     },
     "taildrop": {
-      "receive": "Recevoir via Taildrop",
-      "cancel": "Annuler la réception"
+      "receive": "Recevoir via Taildrop"
     }
   },
   "taildrop": {
