@@ -50,6 +50,7 @@ ColumnLayout {
   property string valueAzanFile:          cfg.azanFile          ?? defaults.azanFile          ?? "azan1.mp3"
   property int    valueHijriDayOffset:    cfg.hijriDayOffset    ?? defaults.hijriDayOffset    ?? 0
   property int    valueWeekStartDay:      cfg.weekStartDay      ?? defaults.weekStartDay      ?? 1
+  property string valueWidgetIcon:        cfg.widgetIcon        ?? defaults.widgetIcon        ?? "building-mosque"
 
   property bool previewing: false
 
@@ -210,6 +211,47 @@ ColumnLayout {
     Layout.bottomMargin: -Style.marginM
   }
 
+  RowLayout {
+    Layout.fillWidth: true
+    spacing: Style.marginM
+
+    NTextInput {
+      id: wigetIconInput
+      Layout.fillWidth: true
+      label: pluginApi?.tr("settings.widgetIcon.label")
+      placeholderText: "building-mosque"
+      text: root.valueWidgetIcon
+      onTextChanged: root.valueWidgetIcon = text.trim()
+    }
+
+    NIcon {
+      icon: root.valueWidgetIcon || "building-mosque"
+      pointSize: Style.fontSizeXL
+      color: Color.mPrimary
+      Layout.alignment: Qt.AlignBottom
+      Layout.bottomMargin: Style.marginM
+    }
+
+    NIconButton {
+      icon: "search"
+      tooltipText: "Browse icons"
+      Layout.alignment: Qt.AlignBottom
+      Layout.bottomMargin: Style.marginXS
+      onClicked: {
+        mainIconPicker.open();
+      }
+    }
+
+    NIconPicker {
+      id: mainIconPicker
+      initialIcon: root.widgetIcon
+      onIconSelected: function (iconName) {
+        root.valueWidgetIcon = iconName;
+        wigetIconInput.text = iconName;
+      }
+    }
+  }
+
   NToggle {
     Layout.fillWidth: true
     label: pluginApi?.tr("settings.showCountdown.label")
@@ -353,6 +395,7 @@ ColumnLayout {
     pluginApi.pluginSettings.tuneAsr           = root.valueTuneAsr
     pluginApi.pluginSettings.tuneMaghrib       = root.valueTuneMaghrib
     pluginApi.pluginSettings.tuneIsha          = root.valueTuneIsha
+    pluginApi.pluginSettings.widgetIcon        = root.valueWidgetIcon
     pluginApi.saveSettings()
     Logger.d("Mawaqit", "Settings saved")
   }

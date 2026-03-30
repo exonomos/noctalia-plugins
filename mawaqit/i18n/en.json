@@ -122,6 +122,10 @@
     "hidePrayerName": {
       "label": "Hide prayer name in bar",
       "desc": "Show only the time or countdown in the bar widget, without the prayer name label."
+    },
+    "widgetIcon": {
+      "label": "Bar icon",
+      "desc": "Icon name from the icon set used by Noctalia (e.g. building-mosque, moon-stars, star)."
     }
   },
   "error": {

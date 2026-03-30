@@ -32,6 +32,9 @@ Item {
   property var cfg: pluginApi?.pluginSettings || ({})
   property var defaults: pluginApi?.manifest?.metadata?.defaultSettings || ({})
   readonly property bool use12h: Settings.data.location.use12hourFormat
+  readonly property string widgetIcon: (pluginApi?.pluginSettings?.widgetIcon)
+    ?? (pluginApi?.manifest?.metadata?.defaultSettings?.widgetIcon)
+    ?? "building-mosque"
 
   readonly property var    mainInstance:     pluginApi?.mainInstance
   readonly property var    prayerTimings:    mainInstance?.prayerTimings    ?? null
@@ -351,7 +354,7 @@ Item {
       // ── Header ─────────────────────────────────────────────────────────
       RowLayout {
         Layout.fillWidth: true; spacing: Style.marginM
-        NIcon { icon: "building-mosque"; pointSize: Style.fontSizeXL; color: Color.mPrimary; Layout.alignment: Qt.AlignVCenter }
+        NIcon { icon: widgetIcon; pointSize: Style.fontSizeXL; color: Color.mPrimary; Layout.alignment: Qt.AlignVCenter }
         NText { text: pluginApi?.tr("panel.title"); pointSize: Style.fontSizeL; font.weight: Font.Bold; color: Color.mOnSurface; Layout.alignment: Qt.AlignVCenter }
         Item { Layout.fillWidth: true }
         NIconButton {
@@ -538,7 +541,7 @@ Item {
             visible: prayerTimings === null && !isLoading && !hasError
             ColumnLayout {
               anchors.centerIn: parent; spacing: Style.marginM
-              NIcon { icon: "building-mosque"; pointSize: Style.fontSizeXXXL; color: Color.mSecondary; Layout.alignment: Qt.AlignHCenter }
+              NIcon { icon: widgetIcon; pointSize: Style.fontSizeXXXL; color: Color.mSecondary; Layout.alignment: Qt.AlignHCenter }
               NText { text: pluginApi?.tr("panel.configure"); color: Color.mSecondary; pointSize: Style.fontSizeM; wrapMode: Text.Wrap; horizontalAlignment: Text.AlignHCenter; Layout.alignment: Qt.AlignHCenter }
             }
           }

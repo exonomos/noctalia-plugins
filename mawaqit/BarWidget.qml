@@ -28,6 +28,7 @@ Item {
   readonly property bool showCountdown:  cfg.showCountdown  ?? defaults.showCountdown  ?? true
   readonly property bool showElapsed:    cfg.showElapsed    ?? defaults.showElapsed    ?? false
   readonly property bool hidePrayerName: cfg.hidePrayerName ?? defaults.hidePrayerName ?? false
+  readonly property string widgetIcon:   cfg.widgetIcon     ?? defaults.widgetIcon     ?? "building-mosque"
 
   readonly property bool use12h:   Settings.data.location.use12hourFormat
   readonly property bool isJumuah: new Date().getDay() === 5
@@ -186,7 +187,7 @@ Item {
       visible: !isVertical
 
       NIcon {
-        icon: "building-mosque"
+        icon: root.widgetIcon
         pointSize: root.iconSize
         color: mouseArea.containsMouse ? Color.mOnHover : Color.mPrimary
         Layout.alignment: Qt.AlignVCenter
@@ -239,7 +240,7 @@ Item {
         spacing: Style.marginXS
 
         NIcon {
-          icon: "building-mosque"
+          icon: root.widgetIcon
           pointSize: Style.toOdd(root.capsuleHeight * 0.45)
           color: mouseArea.containsMouse ? Color.mOnHover : Color.mPrimary
         }
@@ -350,7 +351,7 @@ Item {
   NPopupContextMenu {
     id: contextMenu
     model: [
-      { "label": pluginApi?.tr("menu.openPanel"), "action": "open", "icon": "building-mosque" },
+      { "label": pluginApi?.tr("menu.openPanel"), "action": "open", "icon": root.widgetIcon },
       { "label": pluginApi?.tr("menu.settings"),  "action": "settings", "icon": "settings" }
     ]
     onTriggered: function(action) {
