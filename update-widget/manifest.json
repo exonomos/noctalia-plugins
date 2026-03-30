@@ -31,7 +31,8 @@
       "hideOnEmpty": false,
       "refreshInterval": 120,
       "desktopTip": true,
-      "refreshTimer": true
+      "refreshTimer": true,
+      "noctalia": true
     }
   }
 }

@@ -11,18 +11,27 @@ Item {
     property var pluginApi: null 
     
     // System
-    property variant nameStr: ""
-    property variant newVerStr: ""
-    property variant oldVerStr: ""
+    property string nameStr: ""
+    property string newVerStr: ""
+    property string oldVerStr: ""
 
     // Flatpak
-    property variant flatpakNameStr: ""
-    property variant flatpakNewVerStr: ""
-    property variant flatpakOldVerStr: ""
+    property string flatpakNameStr: ""
+    property string flatpakNewVerStr: ""
+    property string flatpakOldVerStr: ""
+
+    // Plugins
+    property string pluginNameStr: ""
+    property string pluginNewVerStr: ""
+    property string pluginOldVerStr: ""
 
     // Counts
     property int updateCount: 0
     property int flatpakCount: 0
+
+    // Noctalia updates
+    property variant noctaliaNames: ["noctalia-qs", "noctalia-shell"]
+    property bool noctaliaUpdate: false
 
     // On plugin load
     Component.onCompleted: {
@@ -40,8 +49,12 @@ Item {
         root.flatpakNameStr = ""
         root.flatpakNewVerStr = ""
         root.flatpakOldVerStr = ""
+        root.pluginNameStr = ""
+        root.pluginNewVerStr = ""
+        root.pluginOldVerStr = ""
         root.updateCount = 0
         root.flatpakCount = 0
+        root.noctaliaUpdate = false
 
         getNames.command   = ["sh", "-c", pluginApi.pluginSettings.nameCmd   || pluginApi.manifest.metadata.defaultSettings.nameCmd]
         getOldVers.command = ["sh", "-c", pluginApi.pluginSettings.oldVerCmd || pluginApi.manifest.metadata.defaultSettings.oldVerCmd]
@@ -55,6 +68,14 @@ Item {
         runUpdate.command = ["sh", "-c", pluginApi.pluginSettings.updateCmd || pluginApi.manifest.metadata.defaultSettings.updateCmd]
         runUpdate.running = true
     }
+    function checkNoctalia() { // Check Noctalia Updates
+        if (noctaliaNames.some(name => root.nameStr.includes(name)) && pluginApi.pluginSettings.noctalia) {
+            root.noctaliaUpdate = true
+            Logger.i("Update Widget", "Noctalia updates found");
+        } else {
+            Logger.i("Update Widget", "No Noctalia updates found");
+        }
+    }
 
     // System Updates
     Process { // Update Names
@@ -65,6 +86,7 @@ Item {
                 root.updateCount = root.nameStr ? root.nameStr.split("\n").length : 0
                 Logger.i("Update Widget", "Update names: " + root.nameStr.split("\n"))
                 Logger.i("Update Widget", "Update count: " + root.updateCount)
+                checkNoctalia()
 
                 getOldVers.running = true
             }
@@ -104,6 +126,7 @@ Item {
 
                 if (root.flatpakCount) {
                     getFlatpakOldVers.command = ["sh", "-c", "flatpak list --columns=application,version | grep -E '" + this.text.slice(0,-1).replace(/\n/g, "|") +"' | sort | awk '{print $2}'"]
+                    Logger.d("Update Widget", "Flatpak old ver cmd: " + getFlatpakOldVers.command)
                     getFlatpakOldVers.running = true
                 }
             }
@@ -140,7 +163,6 @@ Item {
             }
         }
     }
-
     
     Process { // Update process
         id: runUpdate

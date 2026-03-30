@@ -38,6 +38,10 @@ Item {
     // Hide on empty
     visible: (root.pluginApi.mainInstance.updateCount + root.pluginApi.mainInstance.flatpakCount) | !(pluginApi.pluginSettings.hideOnEmpty ?? pluginApi.manifest.metadata.defaultSettings.hideOnEmpty)
 
+    // Tooltip Text
+    property string tooltipText: root.pluginApi.mainInstance.nameStr + (root.pluginApi.mainInstance.flatpakCount ? "\n\n" : "") + root.pluginApi.mainInstance.flatpakNameStr
+    property string tooltipTextTrimmed: root.tooltipText.split("\n").slice(0, 30).join("\n")
+
     // Visual capsule - centered within the full click area
     Rectangle {
         id: visualCapsule
@@ -45,7 +49,7 @@ Item {
         y: Style.pixelAlignCenter(parent.height, height)
         width: root.contentWidth
         height: root.contentHeight
-        color: mouseArea.containsMouse ? Color.mHover : Style.capsuleColor
+        color: mouseArea.containsMouse ? Color.mHover : (root.pluginApi.mainInstance.noctaliaUpdate ? "#40"+Color.mTertiary.toString().slice(1) : Style.capsuleColor)
         radius: Style.radiusL
         border.color: Style.capsuleBorderColor
         border.width: Style.capsuleBorderWidth
@@ -55,12 +59,12 @@ Item {
             anchors.centerIn: parent
             spacing: Style.marginS
             NIcon { // Icon
-                icon: mouseArea.containsMouse ? "arrow-big-down-lines-filled" : "arrow-big-down-lines"
-                color: mouseArea.containsMouse ? Color.mOnHover : Color.mPrimary
+                color: mouseArea.containsMouse ? Color.mOnHover : (root.pluginApi.mainInstance.noctaliaUpdate ? Color.mHover : Color.mPrimary)
+                icon: root.pluginApi.mainInstance.noctaliaUpdate | mouseArea.containsMouse ? "arrow-big-down-lines-filled" : "arrow-big-down-lines"
             }
             NText { // Count
                 text: (root.pluginApi.mainInstance.updateCount + root.pluginApi.mainInstance.flatpakCount).toString() // Total count (system + flatpak)
-                color: mouseArea.containsMouse ? Color.mOnHover : Color.mOnSurface
+                color: mouseArea.containsMouse ? Color.mOnHover : (root.pluginApi.mainInstance.noctaliaUpdate ? Color.mSecondary : Color.mOnSurface)
                 pointSize: Style.fontSizeM
                 font.weight: Font.Bold
             }
@@ -131,7 +135,7 @@ Item {
         }
         onEntered: {
             // Tooltip shows available updates for both system and flatpak
-            TooltipService.show(root, pluginApi.tr("tooltip.availableupdates") + "\n---------------\n" + root.pluginApi.mainInstance.nameStr + (root.pluginApi.mainInstance.flatpakCount ? "\n\n" : "") + root.pluginApi.mainInstance.flatpakNameStr, BarService.getTooltipDirection())
+            TooltipService.show(root, (root.pluginApi.mainInstance.noctaliaUpdate ? pluginApi.tr("tooltip.noctaliaUpdates") : pluginApi.tr("tooltip.availableUpdates")) + "\n---------------\n" + (root.tooltipTextTrimmed !== root.tooltipText ? root.tooltipTextTrimmed + "\n..." : root.tooltipTextTrimmed), BarService.getTooltipDirection())
         }
 
         onExited: {

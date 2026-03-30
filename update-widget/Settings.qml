@@ -13,16 +13,25 @@ ColumnLayout {
     property string oldVerCmd: pluginApi.pluginSettings.oldVerCmd || pluginApi.manifest.metadata.defaultSettings.oldVerCmd
     property string newVerCmd: pluginApi.pluginSettings.newVerCmd || pluginApi.manifest.metadata.defaultSettings.newVerCmd
     property string updateCmd: pluginApi.pluginSettings.updateCmd || pluginApi.manifest.metadata.defaultSettings.updateCmd
+
     // Show toast on refresh
     property bool toast: pluginApi.pluginSettings.toast ?? pluginApi.manifest.metadata.defaultSettings.toast
+
     // Show hover tip on desktop widget
     property bool desktopTip: pluginApi.pluginSettings.desktopTip ?? pluginApi.manifest.metadata.defaultSettings.desktopTip
+
     // Also check for flatpaks
     property bool flatpak: pluginApi.pluginSettings.flatpak ?? pluginApi.manifest.metadata.defaultSettings.flatpak
+
+    // Noctalia update highlighting
+    property bool noctalia: pluginApi.pluginSettings.noctalia ?? pluginApi.manifest.metadata.defaultSettings.noctalia
+
     // Hide the bar widget when there are no updates
     property bool hideOnEmpty: pluginApi.pluginSettings.hideOnEmpty ?? pluginApi.manifest.metadata.defaultSettings.hideOnEmpty
+
     // Refresh after time intervals
     property bool refreshTimer: pluginApi.pluginSettings.refreshTimer ?? pluginApi.manifest.metadata.defaultSettings.refreshTimer
+    
     // The time interval between available update refreshes
     property int refreshInterval: pluginApi.pluginSettings.refreshInterval || pluginApi.manifest.metadata.defaultSettings.refreshInterval
 
@@ -39,6 +48,8 @@ ColumnLayout {
         font.weight: Font.Bold
         color: Color.mOnSurface
     }
+
+    // Commands
 
     NTextInput { // Name Command
         Layout.fillWidth: true
@@ -94,7 +105,10 @@ ColumnLayout {
         Layout.bottomMargin: Style.marginS
     }
 
-    Item { // Toast Toggle
+    // Toggles
+
+    // Toast Toggle
+    Item {
         Layout.fillWidth: true
         Layout.preferredHeight: toastToggle.implicitHeight
         NToggle {
@@ -122,7 +136,8 @@ ColumnLayout {
         Layout.bottomMargin: Style.marginS
     }
 
-    Item { // Flatpak Toggle
+    // Flatpak Toggle
+    Item {
         Layout.fillWidth: true
         Layout.preferredHeight: flatpakToggle.implicitHeight
         NToggle {
@@ -150,7 +165,37 @@ ColumnLayout {
         Layout.bottomMargin: Style.marginS
     }
 
-    Item { // Hide On Empty Toggle
+    // Noctalia Toggle
+    Item {
+        Layout.fillWidth: true
+        Layout.preferredHeight: noctaliaToggle.implicitHeight
+        NToggle {
+            id: noctaliaToggle
+            anchors.fill: parent
+            label: pluginApi.tr("settings.noctalia")
+            description: pluginApi.tr("settings.noctaliaDesc")
+            checked: root.noctalia
+        }
+        // Mouse area so you can actually use the toggle
+        MouseArea {
+            anchors.fill: parent
+            cursorShape: Qt.PointingHandCursor
+            onClicked: {
+                root.noctalia = !root.noctalia
+                noctaliaToggle.checked = root.noctalia
+                Logger.i("Update Widget", "Noctalia toggle set to: " + noctaliaToggle.checked)
+            }
+        }
+    }
+
+    NDivider {
+        Layout.fillWidth: true
+        Layout.topMargin: Style.marginS
+        Layout.bottomMargin: Style.marginS
+    }
+
+     // Hide On Empty Toggle
+    Item {
         Layout.fillWidth: true
         Layout.preferredHeight: hideOnEmptyToggle.implicitHeight
         NToggle {
@@ -178,7 +223,8 @@ ColumnLayout {
         Layout.bottomMargin: Style.marginS
     }
 
-    Item { // Desktop Hover Tip Toggle
+    // Desktop Hover Tip Toggle
+    Item {
         Layout.fillWidth: true
         Layout.preferredHeight: desktopTipToggle.implicitHeight
         NToggle {
@@ -206,7 +252,8 @@ ColumnLayout {
         Layout.bottomMargin: Style.marginS
     }
 
-    Item { // Refresh Interval Toggle
+    // Refresh Interval Toggle
+    Item {
         Layout.fillWidth: true
         Layout.preferredHeight: refreshTimerToggle.implicitHeight
         NToggle {
@@ -228,7 +275,8 @@ ColumnLayout {
         }
     }
 
-    ColumnLayout { // Refresh Interval
+    // Refresh Interval
+    ColumnLayout {
         Layout.fillWidth: true
         spacing: Style.marginS
         visible: root.refreshTimer
@@ -268,6 +316,7 @@ ColumnLayout {
         pluginApi.pluginSettings.updateCmd = root.updateCmd
 
         pluginApi.pluginSettings.flatpak = root.flatpak
+        pluginApi.pluginSettings.noctalia = root.noctalia
         pluginApi.pluginSettings.toast = root.toast
         pluginApi.pluginSettings.desktopTip = root.desktopTip
         pluginApi.pluginSettings.hideOnEmpty = root.hideOnEmpty
